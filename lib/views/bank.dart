@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BankDetails extends StatefulWidget {
   @override
@@ -68,7 +67,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   "Bank",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 00.029,
+                                    fontSize: sH * 0.024,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -76,7 +75,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   "A/C Name",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -84,7 +83,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   "A/C Number",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -92,7 +91,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   "IFSC Code",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -100,7 +99,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   "Branch",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )
@@ -113,35 +112,35 @@ class _BankDetailsState extends State<BankDetails> {
                                   "HDFC",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                   ),
                                 ),
                                 Text(
                                   "Chahat Ornaments",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                   ),
                                 ),
                                 Text(
                                   "50200053718511",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.03,
+                                    fontSize: sH * 0.024,
                                   ),
                                 ),
                                 Text(
                                   "HDFC0009136",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                   ),
                                 ),
                                 Text(
                                   "Nichibagh",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                   ),
                                 )
                               ],
@@ -166,7 +165,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   "Bank",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -174,7 +173,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   "A/C Name",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -182,7 +181,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   "A/C Number",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -190,7 +189,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   "IFSC Code",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -198,7 +197,7 @@ class _BankDetailsState extends State<BankDetails> {
                                   "Branch",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )
@@ -211,35 +210,35 @@ class _BankDetailsState extends State<BankDetails> {
                                   "PNB",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                   ),
                                 ),
                                 Text(
                                   "Chahat Ornaments",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                   ),
                                 ),
                                 Text(
                                   "0464002100102020",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                   ),
                                 ),
                                 Text(
                                   "PUNB00046400",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                   ),
                                 ),
                                 Text(
                                   "Nichibagh",
                                   style: TextStyle(
                                     color: Color(0xff2c5530),
-                                    fontSize: sH * 0.029,
+                                    fontSize: sH * 0.024,
                                   ),
                                 )
                               ],

@@ -122,7 +122,7 @@ class _HomeState extends State<Home> {
                                   'Gold Number/सोना नंबर',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.02),
+                                      fontSize: sH * 0.018),
                                 ),
                                 d.rateRef.isEmpty
                                     ? Text(
@@ -151,7 +151,7 @@ class _HomeState extends State<Home> {
                                     '₹ ${d.rateRef[0]['rates'][0].toString()}',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.026,
+                                      fontSize: sH * 0.022,
                                     ),
                                   ),
                           ),
@@ -173,7 +173,7 @@ class _HomeState extends State<Home> {
                                   'Gold Bar/सोना ब्रेड',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.02),
+                                      fontSize: sH * 0.018),
                                 ),
                                 d.rateRef.isEmpty
                                     ? Text(
@@ -195,14 +195,14 @@ class _HomeState extends State<Home> {
                                     "Loading..",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.026,
+                                      fontSize: sH * 0.022,
                                     ),
                                   )
                                 : Text(
                                     '₹ ${d.rateRef[0]['rates'][1].toString()}',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.026,
+                                      fontSize: sH * 0.022,
                                     ),
                                   ),
                           ),
@@ -225,7 +225,7 @@ class _HomeState extends State<Home> {
                                   'Silver Bar/चांदी ब्रेड',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.02),
+                                      fontSize: sH * 0.018),
                                 ),
                                 d.rateRef.isEmpty
                                     ? Text(
@@ -247,14 +247,14 @@ class _HomeState extends State<Home> {
                                     "Loading..",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.026,
+                                      fontSize: sH * 0.022,
                                     ),
                                   )
                                 : Text(
                                     '₹ ${d.rateRef[0]['rates'][2].toString()}',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.026,
+                                      fontSize: sH * 0.022,
                                     ),
                                   ),
                           ),
@@ -276,7 +276,7 @@ class _HomeState extends State<Home> {
                                   'RTGS/UPI/सोना ब्रेड',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.02),
+                                      fontSize: sH * 0.018),
                                 ),
                                 d.rateRef.isEmpty
                                     ? Text(
@@ -298,14 +298,14 @@ class _HomeState extends State<Home> {
                                     "Loading..",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.026,
+                                      fontSize: sH * 0.022,
                                     ),
                                   )
                                 : Text(
                                     '₹ ${d.rateRef[0]['rates'][3].toString()}',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: sH * 0.026,
+                                      fontSize: sH * 0.022,
                                     ),
                                   ),
                           ),
