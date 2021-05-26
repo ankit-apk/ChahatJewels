@@ -41,11 +41,6 @@ class _BankDetailsState extends State<BankDetails> {
                     borderRadius: BorderRadius.circular(20)),
                 child: Column(
                   children: [
-                    // Icon(
-                    //   FontAwesomeIcons.wallet,
-                    //   size: sH * 0.1,
-                    //   color: Color(0xfffbc02d),
-                    // ),
                     Image.asset(
                       'assets/bank.png',
                       height: sH * 0.12,
