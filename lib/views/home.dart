@@ -65,18 +65,6 @@ class _HomeState extends State<Home> {
                                   '${d.bannerRef[0]['url'].toString()}',
                                   fit: BoxFit.fill,
                                 ),
-                          // () => d.bannerRef.isEmpty
-                          //     ? Center(
-                          //         child: CircularProgressIndicator(),
-                          //       )
-                          //     : CachedNetworkImage(
-                          //         imageUrl: d.bannerRef[0]['url'].toString(),
-                          //         placeholder: (context, url) =>
-                          //             Image.asset('assets/ph.png'),
-                          //         errorWidget: (context, url, error) =>
-                          //             Icon(Icons.error),
-                          //         fit: BoxFit.fill,
-                          //       ),
                         ),
                       ),
                     ),
