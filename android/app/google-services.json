@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "744824231745",
+    "project_id": "awesome-drawing-quiz-5555a",
+    "storage_bucket": "awesome-drawing-quiz-5555a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744824231745:android:62b720c24742546a7a73c0",
+        "android_client_info": {
+          "package_name": "com.codelab.awesomedrawingquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744824231745-pcqkdqfps4o3fnlpv2en1fg6oce4ec75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuyBry-JU9T5K3dhmJjzq5nVSOmxGudnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744824231745-pcqkdqfps4o3fnlpv2en1fg6oce4ec75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744824231745:android:4ce79d97606acc847a73c0",
+        "android_client_info": {
+          "package_name": "com.example.adsense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744824231745-pcqkdqfps4o3fnlpv2en1fg6oce4ec75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuyBry-JU9T5K3dhmJjzq5nVSOmxGudnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744824231745-pcqkdqfps4o3fnlpv2en1fg6oce4ec75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744824231745:android:962fff3f73d43d547a73c0",
+        "android_client_info": {
+          "package_name": "com.example.chahatjewel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744824231745-pcqkdqfps4o3fnlpv2en1fg6oce4ec75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuyBry-JU9T5K3dhmJjzq5nVSOmxGudnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744824231745-pcqkdqfps4o3fnlpv2en1fg6oce4ec75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
