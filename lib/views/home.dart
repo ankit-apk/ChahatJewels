@@ -141,13 +141,13 @@ class _HomeState extends State<Home> {
                                         "Loading",
                                         style: TextStyle(
                                             color: Colors.red,
-                                            fontSize: sH * 0.014),
+                                            fontSize: sH * 0.013),
                                       )
                                     : Text(
                                         "Last Updated ${d.rateRef[0]['lastupdated'].toString()}",
                                         style: TextStyle(
                                             color: Colors.red,
-                                            fontSize: sH * 0.014),
+                                            fontSize: sH * 0.013),
                                       )
                               ],
                             ),
@@ -192,13 +192,13 @@ class _HomeState extends State<Home> {
                                         "Loading",
                                         style: TextStyle(
                                             color: Colors.red,
-                                            fontSize: sH * 0.014),
+                                            fontSize: sH * 0.013),
                                       )
                                     : Text(
                                         "Last Updated ${d.rateRef[0]['lastupdated'].toString()}",
                                         style: TextStyle(
                                             color: Colors.red,
-                                            fontSize: sH * 0.014),
+                                            fontSize: sH * 0.013),
                                       )
                               ],
                             ),
@@ -244,13 +244,13 @@ class _HomeState extends State<Home> {
                                         "Loading",
                                         style: TextStyle(
                                             color: Colors.red,
-                                            fontSize: sH * 0.014),
+                                            fontSize: sH * 0.013),
                                       )
                                     : Text(
                                         "Last Updated ${d.rateRef[0]['lastupdated'].toString()}",
                                         style: TextStyle(
                                             color: Colors.red,
-                                            fontSize: sH * 0.014),
+                                            fontSize: sH * 0.013),
                                       )
                               ],
                             ),
@@ -295,13 +295,13 @@ class _HomeState extends State<Home> {
                                         "Loading",
                                         style: TextStyle(
                                             color: Colors.red,
-                                            fontSize: sH * 0.014),
+                                            fontSize: sH * 0.013),
                                       )
                                     : Text(
                                         "Last Updated ${d.rateRef[0]['lastupdated'].toString()}",
                                         style: TextStyle(
                                             color: Colors.red,
-                                            fontSize: sH * 0.014),
+                                            fontSize: sH * 0.013),
                                       )
                               ],
                             ),
