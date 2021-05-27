@@ -15,18 +15,22 @@ class _ContactUsState extends State<ContactUs> {
   Widget build(BuildContext context) {
     sH = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(left: 10, right: 10),
+          padding: const EdgeInsets.only(left: 0, right: 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "OUR ADDRESS",
-                style: TextStyle(
-                    color: Color(0xff2c5530),
-                    fontSize: sH * 0.022,
-                    fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  "OUR ADDRESS",
+                  style: TextStyle(
+                      color: Color(0xff2c5530),
+                      fontSize: sH * 0.022,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
               SizedBox(
                 height: sH * 0.012,
@@ -67,12 +71,15 @@ class _ContactUsState extends State<ContactUs> {
               SizedBox(
                 height: 20,
               ),
-              Text(
-                "CONTACT US",
-                style: TextStyle(
-                    color: Color(0xff2c5530),
-                    fontSize: sH * 0.022,
-                    fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  "CONTACT US",
+                  style: TextStyle(
+                      color: Color(0xff2c5530),
+                      fontSize: sH * 0.022,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
               Container(
                 height: sH * 0.008,
