@@ -6,10 +6,10 @@ class BankDetails extends StatefulWidget {
 }
 
 class _BankDetailsState extends State<BankDetails> {
-  double sH = 0;
+  double screenHeight = 0;
   @override
   Widget build(BuildContext context) {
-    sH = MediaQuery.of(context).size.height;
+    screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -22,20 +22,20 @@ class _BankDetailsState extends State<BankDetails> {
                 "BANK DETAILS",
                 style: TextStyle(
                     color: Color(0xff2c5530),
-                    fontSize: sH * 0.022,
+                    fontSize: screenHeight * 0.022,
                     fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(
-              height: sH * 0.012,
+              height: screenHeight * 0.012,
             ),
             Container(
               color: Color(0xffD1AF68),
-              height: sH * 0.008,
+              height: screenHeight * 0.008,
               width: double.infinity,
             ),
             SizedBox(
-              height: sH * 0.02,
+              height: screenHeight * 0.02,
             ),
             Container(
               decoration: BoxDecoration(
@@ -44,11 +44,11 @@ class _BankDetailsState extends State<BankDetails> {
                 children: [
                   Image.asset(
                     'assets/bank.png',
-                    height: sH * 0.12,
+                    height: screenHeight * 0.12,
                     color: Color(0xfffbc02d),
                   ),
                   SizedBox(
-                    height: sH * 0.10,
+                    height: screenHeight * 0.10,
                   ),
                   Card(
                     child: Padding(
@@ -59,86 +59,24 @@ class _BankDetailsState extends State<BankDetails> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "Bank",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "A/C Name",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "A/C Number",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "IFSC Code",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "Branch",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              )
+                              BankText(text: "Bank", sH: screenHeight),
+                              BankText(text: "A/C Name", sH: screenHeight),
+                              BankText(text: "A/C Number", sH: screenHeight),
+                              BankText(text: "IFSC Code", sH: screenHeight),
+                              BankText(text: "Branch", sH: screenHeight),
                             ],
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "HDFC",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                ),
-                              ),
-                              Text(
-                                "Chahat Ornaments",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                ),
-                              ),
-                              Text(
-                                "50200053718511",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                ),
-                              ),
-                              Text(
-                                "HDFC0009136",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                ),
-                              ),
-                              Text(
-                                "Nichibagh",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                ),
-                              )
+                              BankDetail(detail: "HDFC", sH: screenHeight),
+                              BankDetail(
+                                  detail: "Chahat Ornaments", sH: screenHeight),
+                              BankDetail(
+                                  detail: "50200053718511", sH: screenHeight),
+                              BankDetail(
+                                  detail: "HDFC0009136", sH: screenHeight),
+                              BankDetail(detail: "Nichibagh", sH: screenHeight),
                             ],
                           ),
                         ],
@@ -146,7 +84,7 @@ class _BankDetailsState extends State<BankDetails> {
                     ),
                   ),
                   SizedBox(
-                    height: sH * 0.018,
+                    height: screenHeight * 0.018,
                   ),
                   Card(
                     child: Padding(
@@ -157,86 +95,24 @@ class _BankDetailsState extends State<BankDetails> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "Bank",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "A/C Name",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "A/C Number",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "IFSC Code",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                "Branch",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              )
+                              BankText(text: "Bank", sH: screenHeight),
+                              BankText(text: "A/C Name", sH: screenHeight),
+                              BankText(text: "A/C Number", sH: screenHeight),
+                              BankText(text: "IFSC Code", sH: screenHeight),
+                              BankText(text: "Branch", sH: screenHeight),
                             ],
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "PNB",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                ),
-                              ),
-                              Text(
-                                "Chahat Ornaments",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                ),
-                              ),
-                              Text(
-                                "0464002100102020",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                ),
-                              ),
-                              Text(
-                                "PUNB00046400",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                ),
-                              ),
-                              Text(
-                                "Nichibagh",
-                                style: TextStyle(
-                                  color: Color(0xff2c5530),
-                                  fontSize: sH * 0.024,
-                                ),
-                              )
+                              BankDetail(detail: "PNB", sH: screenHeight),
+                              BankDetail(
+                                  detail: "Chahat Ornaments", sH: screenHeight),
+                              BankDetail(
+                                  detail: "0464002100102020", sH: screenHeight),
+                              BankDetail(
+                                  detail: "PUNB00046400", sH: screenHeight),
+                              BankDetail(detail: "Nichibagh", sH: screenHeight),
                             ],
                           ),
                         ],
@@ -248,6 +124,45 @@ class _BankDetailsState extends State<BankDetails> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class BankDetail extends StatelessWidget {
+  const BankDetail({Key? key, required this.sH, required this.detail})
+      : super(key: key);
+
+  final double sH;
+  final String detail;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "$detail",
+      style: TextStyle(
+        color: Color(0xff2c5530),
+        fontSize: sH * 0.024,
+      ),
+    );
+  }
+}
+
+class BankText extends StatelessWidget {
+  const BankText({Key? key, required this.sH, required this.text})
+      : super(key: key);
+
+  final double sH;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "$text",
+      style: TextStyle(
+        color: Color(0xff2c5530),
+        fontSize: sH * 0.024,
+        fontWeight: FontWeight.bold,
       ),
     );
   }

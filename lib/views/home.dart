@@ -11,11 +11,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  DataController d = Get.put(DataController());
-  double sH = 0;
+  DataController dataController = Get.put(DataController());
+  double screenHeight = 0;
   @override
   Widget build(BuildContext context) {
-    sH = MediaQuery.of(context).size.height;
+    screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -32,37 +32,37 @@ class _HomeState extends State<Home> {
                     "CHAHAT PRECIOUS JEWELS",
                     style: TextStyle(
                         color: Color(0xff2c5530),
-                        fontSize: sH * 0.022,
+                        fontSize: screenHeight * 0.022,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
             ),
             SizedBox(
-              height: sH * 0.012,
+              height: screenHeight * 0.012,
             ),
             Container(
               color: Color(0xffD1AF68),
-              height: sH * 0.008,
+              height: screenHeight * 0.008,
               width: double.infinity,
             ),
             SizedBox(
-              height: sH * 0.02,
+              height: screenHeight * 0.02,
             ),
             AspectRatio(
               aspectRatio: 16 / 9,
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(20),
                 child: Card(
                   color: Colors.black,
                   child: Obx(
-                    () => d.bannerRef.isEmpty
+                    () => dataController.bannerRef.isEmpty
                         ? Center(
                             child: CircularProgressIndicator(),
                           )
                         : Image.network(
-                            '${d.bannerRef[0]['url'].toString()}',
-                            fit: BoxFit.fill,
+                            '${dataController.bannerRef[0]['url'].toString()}',
+                            fit: BoxFit.cover,
                           ),
                   ),
                 ),
@@ -72,11 +72,11 @@ class _HomeState extends State<Home> {
               width: double.infinity,
               child: Obx(
                 () => MarqueeText(
-                  text: d.message1.isEmpty
+                  text: dataController.message1.isEmpty
                       ? "Loading"
-                      : d.message1[0]['messages'].toString(),
+                      : dataController.message1[0]['messages'].toString(),
                   style: TextStyle(
-                    fontSize: sH * 0.026,
+                    fontSize: screenHeight * 0.026,
                     color: Colors.black,
                   ),
                   speed: 15,
@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             SizedBox(
-              height: sH * 0.01,
+              height: screenHeight * 0.01,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 8.0),
@@ -92,12 +92,12 @@ class _HomeState extends State<Home> {
                 "Live Price",
                 style: TextStyle(
                     color: Color(0xff2c5530),
-                    fontSize: sH * 0.022,
+                    fontSize: screenHeight * 0.022,
                     fontWeight: FontWeight.bold),
               ),
             ),
             Container(
-              height: sH * 0.008,
+              height: screenHeight * 0.008,
               width: MediaQuery.of(context).size.width / 2,
               color: Color(0xffD1AF68),
             ),
@@ -107,210 +107,31 @@ class _HomeState extends State<Home> {
                   physics: NeverScrollableScrollPhysics(),
                   children: [
                     Container(
-                      height: sH * 0.077,
+                      height: screenHeight * 0.077,
                       child: Card(
-                        child: ListTile(
-                          leading: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(
-                                'assets/goldneck.png',
-                                height: sH * 0.04,
-                              )),
-                          title: Column(
-                            children: [
-                              AutoSizeText(
-                                'Gold Number/सोना नंबर',
-                                maxLines: 1,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.018),
-                              ),
-                              d.rateRef.isEmpty
-                                  ? Text(
-                                      "Loading",
-                                      style: TextStyle(
-                                          color: Colors.red,
-                                          fontSize: sH * 0.0125),
-                                    )
-                                  : Text(
-                                      "Last Updated ${d.rateRef[0]['lastupdated'].toString()}",
-                                      style: TextStyle(
-                                          color: Colors.red,
-                                          fontSize: sH * 0.0125),
-                                    )
-                            ],
-                          ),
-                          trailing: d.rateRef.isEmpty
-                              ? Text(
-                                  "Loading..",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.026,
-                                  ),
-                                )
-                              : Text(
-                                  '₹ ${d.rateRef[0]['rates'][0].toString()}',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.020,
-                                  ),
-                                ),
-                        ),
+                        child: buildListTile(
+                            'Gold Number/सोना नंबर', 'assets/goldneck.png', 0),
                       ),
                     ),
                     Container(
-                      height: sH * 0.077,
+                      height: screenHeight * 0.077,
                       child: Card(
-                        child: ListTile(
-                          leading: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(
-                                'assets/goldbar.png',
-                                height: sH * 0.04,
-                              )),
-                          title: Column(
-                            children: [
-                              AutoSizeText(
-                                'Gold Bar/सोना ब्रेड',
-                                maxLines: 1,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.018),
-                              ),
-                              d.rateRef.isEmpty
-                                  ? Text(
-                                      "Loading",
-                                      style: TextStyle(
-                                          color: Colors.red,
-                                          fontSize: sH * 0.0125),
-                                    )
-                                  : Text(
-                                      "Last Updated ${d.rateRef[0]['lastupdated'].toString()}",
-                                      style: TextStyle(
-                                          color: Colors.red,
-                                          fontSize: sH * 0.0125),
-                                    )
-                            ],
-                          ),
-                          trailing: d.rateRef.isEmpty
-                              ? Text(
-                                  "Loading..",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.020,
-                                  ),
-                                )
-                              : Text(
-                                  '₹ ${d.rateRef[0]['rates'][1].toString()}',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.020,
-                                  ),
-                                ),
-                        ),
+                        child: buildListTile(
+                            'Gold Bar/सोना ब्रेड', 'assets/goldbar.png', 1),
                       ),
                     ),
                     Container(
-                      height: sH * 0.077,
+                      height: screenHeight * 0.077,
                       child: Card(
-                        child: ListTile(
-                          leading: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(
-                                'assets/silverbar.png',
-                                color: Colors.grey.shade600,
-                                height: sH * 0.04,
-                              )),
-                          title: Column(
-                            children: [
-                              Text(
-                                'Silver Bar/चांदी ब्रेड',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.018),
-                              ),
-                              d.rateRef.isEmpty
-                                  ? Text(
-                                      "Loading",
-                                      style: TextStyle(
-                                          color: Colors.red,
-                                          fontSize: sH * 0.0125),
-                                    )
-                                  : Text(
-                                      "Last Updated ${d.rateRef[0]['lastupdated'].toString()}",
-                                      style: TextStyle(
-                                          color: Colors.red,
-                                          fontSize: sH * 0.0125),
-                                    )
-                            ],
-                          ),
-                          trailing: d.rateRef.isEmpty
-                              ? Text(
-                                  "Loading..",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.020,
-                                  ),
-                                )
-                              : Text(
-                                  '₹ ${d.rateRef[0]['rates'][2].toString()}',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.020,
-                                  ),
-                                ),
-                        ),
+                        child: buildListTile('Silver Bar/चांदी ब्रेड',
+                            'assets/silverbar.png', 2),
                       ),
                     ),
                     Container(
-                      height: sH * 0.077,
+                      height: screenHeight * 0.077,
                       child: Card(
-                        child: ListTile(
-                          leading: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(
-                                'assets/upi.png',
-                                height: sH * 0.04,
-                              )),
-                          title: Column(
-                            children: [
-                              Text(
-                                'RTGS/UPI/सोना ब्रेड',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.018),
-                              ),
-                              d.rateRef.isEmpty
-                                  ? Text(
-                                      "Loading",
-                                      style: TextStyle(
-                                          color: Colors.red,
-                                          fontSize: sH * 0.0125),
-                                    )
-                                  : Text(
-                                      "Last Updated ${d.rateRef[0]['lastupdated'].toString()}",
-                                      style: TextStyle(
-                                          color: Colors.red,
-                                          fontSize: sH * 0.0125),
-                                    )
-                            ],
-                          ),
-                          trailing: d.rateRef.isEmpty
-                              ? Text(
-                                  "Loading..",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.020,
-                                  ),
-                                )
-                              : Text(
-                                  '₹ ${d.rateRef[0]['rates'][3].toString()}',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.020,
-                                  ),
-                                ),
-                        ),
+                        child: buildListTile(
+                            'RTGS/UPI/सोना ब्रेड', 'assets/upi.png', 3),
                       ),
                     ),
                   ],
@@ -321,11 +142,11 @@ class _HomeState extends State<Home> {
               width: double.infinity,
               child: Obx(
                 () => MarqueeText(
-                  text: d.message2.isEmpty
+                  text: dataController.message2.isEmpty
                       ? "Loading"
-                      : d.message2[0]['messages'].toString(),
+                      : dataController.message2[0]['messages'].toString(),
                   style: TextStyle(
-                    fontSize: sH * 0.026,
+                    fontSize: screenHeight * 0.026,
                     color: Colors.black,
                   ),
                   speed: 15,
@@ -335,6 +156,53 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+    );
+  }
+
+  ListTile buildListTile(String item, String location, int index) {
+    return ListTile(
+      leading: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Image.asset(
+            '$location',
+            height: screenHeight * 0.04,
+          )),
+      title: Column(
+        children: [
+          AutoSizeText(
+            '$item',
+            maxLines: 1,
+            style: TextStyle(
+                fontWeight: FontWeight.bold, fontSize: screenHeight * 0.018),
+          ),
+          dataController.rateRef.isEmpty
+              ? Text(
+                  "Loading",
+                  style: TextStyle(
+                      color: Colors.red, fontSize: screenHeight * 0.0125),
+                )
+              : Text(
+                  "Last Updated ${dataController.rateRef[0]['lastupdated'].toString()}",
+                  style: TextStyle(
+                      color: Colors.red, fontSize: screenHeight * 0.0125),
+                )
+        ],
+      ),
+      trailing: dataController.rateRef.isEmpty
+          ? Text(
+              "Loading..",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: screenHeight * 0.026,
+              ),
+            )
+          : Text(
+              '₹ ${dataController.rateRef[0]['rates'][index].toString()}',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: screenHeight * 0.020,
+              ),
+            ),
     );
   }
 }

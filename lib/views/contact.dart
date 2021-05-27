@@ -9,197 +9,161 @@ class ContactUs extends StatefulWidget {
 }
 
 class _ContactUsState extends State<ContactUs> {
-  DataController d = Get.put(DataController());
-  double sH = 0;
+  DataController dataController = Get.put(DataController());
+  double screenHeight = 0;
   @override
   Widget build(BuildContext context) {
-    sH = MediaQuery.of(context).size.height;
+    screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
+      body: Obx(
+        () => SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 0, right: 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "OUR ADDRESS",
+                      style: TextStyle(
+                          color: Color(0xff2c5530),
+                          fontSize: screenHeight * 0.022,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.012,
+                  ),
+                  Container(
+                    color: Color(0xffD1AF68),
+                    height: screenHeight * 0.008,
+                    width: double.infinity,
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.02,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.mapMarked,
+                          size: screenHeight * 0.1,
+                          color: Color(0xfffbc02d),
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.018,
+                        ),
+                        Text(
+                          "26, Thatheri Nazar, Ghasi Tola, Varanasi, Uttar Pradesh\n221001",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color(0xff2c5530),
+                            fontSize: screenHeight * 0.03,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      "CONTACT US",
+                      style: TextStyle(
+                          color: Color(0xff2c5530),
+                          fontSize: screenHeight * 0.022,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(
+                    height: screenHeight * 0.008,
+                    width: MediaQuery.of(context).size.width / 2,
+                    color: Color(0xffD1AF68),
+                  ),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: dataController.contactsRef.isEmpty
+                          ? 0
+                          : dataController.contactsRef.length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            buildContainer(index),
+                          ],
+                        );
+                      })
+                  // buildContainer(0, 1),
+                  // buildContainer(2, 3),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container buildContainer(int index) {
+    return Container(
+      // height: sH * 0.12,
+      child: Card(
         child: Padding(
-          padding: const EdgeInsets.only(left: 0, right: 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Text(
-                  "OUR ADDRESS",
-                  style: TextStyle(
-                      color: Color(0xff2c5530),
-                      fontSize: sH * 0.022,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              SizedBox(
-                height: sH * 0.012,
-              ),
-              Container(
-                color: Color(0xffD1AF68),
-                height: sH * 0.008,
-                width: double.infinity,
-              ),
-              SizedBox(
-                height: sH * 0.02,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    dataController.contactsRef[index]['name'].toString(),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: screenHeight * 0.026),
+                  ),
+                  Text(
+                    dataController.contactsRef[index]['number'].toString(),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: screenHeight * 0.024),
+                  ),
+                ],
               ),
               Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20)),
-                child: Column(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(
-                      FontAwesomeIcons.mapMarked,
-                      size: sH * 0.1,
-                      color: Color(0xfffbc02d),
+                    TextButton(
+                      onPressed: () {
+                        dataController.launchWhatsapp(
+                          dataController.contactsRef[index]['number']
+                              .toString(),
+                        );
+                      },
+                      child:
+                          Icon(FontAwesomeIcons.whatsapp, color: Colors.green),
                     ),
                     SizedBox(
-                      height: sH * 0.018,
+                      width: screenHeight * 0.028,
                     ),
-                    Text(
-                      "26, Thatheri Nazar, Ghasi Tola, Varanasi, Uttar Pradesh\n221001",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Color(0xff2c5530),
-                        fontSize: sH * 0.03,
-                      ),
+                    TextButton(
+                      onPressed: () {
+                        dataController.launchPhone(
+                          dataController.contactsRef[index]['number']
+                              .toString(),
+                        );
+                      },
+                      child: Icon(FontAwesomeIcons.phone, color: Colors.blue),
                     )
                   ],
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Text(
-                  "CONTACT US",
-                  style: TextStyle(
-                      color: Color(0xff2c5530),
-                      fontSize: sH * 0.022,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              Container(
-                height: sH * 0.008,
-                width: MediaQuery.of(context).size.width / 2,
-                color: Color(0xffD1AF68),
-              ),
-              Container(
-                // height: sH * 0.12,
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Obx(
-                          () => Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                d.contactsRef[0]['contacts'][0].toString(),
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.026),
-                              ),
-                              Text(
-                                d.contactsRef[0]['contacts'][1].toString(),
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: sH * 0.024),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  d.launchWhatsapp(d.contactsRef[0]['contacts']
-                                          [1]
-                                      .toString());
-                                },
-                                child: Icon(FontAwesomeIcons.whatsapp,
-                                    color: Colors.green),
-                              ),
-                              SizedBox(
-                                width: sH * 0.028,
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  d.launchPhone(d.contactsRef[0]['contacts'][1]
-                                      .toString());
-                                },
-                                child: Icon(FontAwesomeIcons.phone,
-                                    color: Colors.blue),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                // height: sH * 0.12,
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              d.contactsRef[0]['contacts'][2].toString(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: sH * 0.026),
-                            ),
-                            Text(
-                              d.contactsRef[0]['contacts'][3].toString(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: sH * 0.024),
-                            ),
-                          ],
-                        ),
-                        Container(
-                          child: Row(
-                            // mainAxisSize: MainAxisSize.min,
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  d.launchWhatsapp(d.contactsRef[0]['contacts']
-                                          [3]
-                                      .toString());
-                                },
-                                child: Icon(FontAwesomeIcons.whatsapp,
-                                    color: Colors.green),
-                              ),
-                              SizedBox(
-                                width: sH * 0.028,
-                              ),
-                              TextButton(
-                                onPressed: () {
-                                  d.launchPhone(d.contactsRef[0]['contacts'][3]
-                                      .toString());
-                                },
-                                child: Icon(FontAwesomeIcons.phone,
-                                    color: Colors.blue),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                 ),
               ),
             ],
