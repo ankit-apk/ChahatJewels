@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:chahatjewel/controllers/data_controller.dart';
+import 'package:chahatjewel/utils/colors_file.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:marquee_text/marquee_text.dart';
@@ -18,7 +19,6 @@ class _HomeState extends State<Home> {
     screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
                   child: Text(
                     "CHAHAT PRECIOUS JEWELS",
                     style: TextStyle(
-                        color: Color(0xff2c5530),
+                        color: AppColors.fontColor,
                         fontSize: screenHeight * 0.022,
                         fontWeight: FontWeight.bold),
                   ),
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
               height: screenHeight * 0.012,
             ),
             Container(
-              color: Color(0xffD1AF68),
+              color: AppColors.marginColor,
               height: screenHeight * 0.008,
               width: double.infinity,
             ),
@@ -54,7 +54,6 @@ class _HomeState extends State<Home> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Card(
-                  color: Colors.black,
                   child: Obx(
                     () => dataController.bannerRef.isEmpty
                         ? Center(
@@ -77,7 +76,6 @@ class _HomeState extends State<Home> {
                       : dataController.message1[0]['messages'].toString(),
                   style: TextStyle(
                     fontSize: screenHeight * 0.026,
-                    color: Colors.black,
                   ),
                   speed: 15,
                 ),
@@ -91,7 +89,7 @@ class _HomeState extends State<Home> {
               child: Text(
                 "Live Price",
                 style: TextStyle(
-                    color: Color(0xff2c5530),
+                    color: AppColors.fontColor,
                     fontSize: screenHeight * 0.022,
                     fontWeight: FontWeight.bold),
               ),
@@ -99,7 +97,7 @@ class _HomeState extends State<Home> {
             Container(
               height: screenHeight * 0.008,
               width: MediaQuery.of(context).size.width / 2,
-              color: Color(0xffD1AF68),
+              color: AppColors.marginColor,
             ),
             Expanded(
               child: Obx(
@@ -147,7 +145,6 @@ class _HomeState extends State<Home> {
                       : dataController.message2[0]['messages'].toString(),
                   style: TextStyle(
                     fontSize: screenHeight * 0.026,
-                    color: Colors.black,
                   ),
                   speed: 15,
                 ),
@@ -179,12 +176,12 @@ class _HomeState extends State<Home> {
               ? Text(
                   "Loading",
                   style: TextStyle(
-                      color: Colors.red, fontSize: screenHeight * 0.0125),
+                      color: AppColors.red, fontSize: screenHeight * 0.0125),
                 )
               : Text(
                   "Last Updated ${dataController.rateRef[0]['lastupdated'].toString()}",
                   style: TextStyle(
-                      color: Colors.red, fontSize: screenHeight * 0.0125),
+                      color: AppColors.red, fontSize: screenHeight * 0.0125),
                 )
         ],
       ),

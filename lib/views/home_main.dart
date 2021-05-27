@@ -1,3 +1,4 @@
+import 'package:chahatjewel/utils/colors_file.dart';
 import 'package:chahatjewel/views/bank.dart';
 import 'package:chahatjewel/views/contact.dart';
 import 'package:chahatjewel/views/gallery.dart';
@@ -24,7 +25,7 @@ class _HomeMainState extends State<HomeMain> {
           builder: (context) => IconButton(
             icon: Icon(
               Icons.menu,
-              color: Colors.yellow.shade700,
+              color: AppColors.goldDark,
             ),
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
@@ -42,7 +43,7 @@ class _HomeMainState extends State<HomeMain> {
                 Text(
                   "नमस्ते",
                   style: TextStyle(
-                      color: Color(0xff2c5530),
+                      color: AppColors.fontColor,
                       fontSize: 14,
                       fontWeight: FontWeight.bold),
                 )
@@ -57,8 +58,8 @@ class _HomeMainState extends State<HomeMain> {
         height: MediaQuery.of(context).size.height * 0.08,
         color: Colors.white,
         child: SalomonBottomBar(
-          selectedItemColor: Color(0xffD1AF00),
-          unselectedItemColor: Color(0xffD1AF28),
+          selectedItemColor: AppColors.goldDark,
+          unselectedItemColor: AppColors.goldLite,
           currentIndex: _currentIndex,
           onTap: (i) => setState(() => _currentIndex = i),
           items: [

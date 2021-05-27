@@ -1,3 +1,4 @@
+import 'package:chahatjewel/utils/colors_file.dart';
 import 'package:flutter/material.dart';
 
 class BankDetails extends StatefulWidget {
@@ -11,7 +12,6 @@ class _BankDetailsState extends State<BankDetails> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +21,7 @@ class _BankDetailsState extends State<BankDetails> {
               child: Text(
                 "BANK DETAILS",
                 style: TextStyle(
-                    color: Color(0xff2c5530),
+                    color: AppColors.fontColor,
                     fontSize: screenHeight * 0.022,
                     fontWeight: FontWeight.bold),
               ),
@@ -30,7 +30,7 @@ class _BankDetailsState extends State<BankDetails> {
               height: screenHeight * 0.012,
             ),
             Container(
-              color: Color(0xffD1AF68),
+              color: AppColors.marginColor,
               height: screenHeight * 0.008,
               width: double.infinity,
             ),
@@ -38,14 +38,14 @@ class _BankDetailsState extends State<BankDetails> {
               height: screenHeight * 0.02,
             ),
             Container(
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20)),
               child: Column(
                 children: [
                   Image.asset(
                     'assets/bank.png',
                     height: screenHeight * 0.12,
-                    color: Color(0xfffbc02d),
+                    color: AppColors.goldDark,
                   ),
                   SizedBox(
                     height: screenHeight * 0.10,
@@ -59,24 +59,37 @@ class _BankDetailsState extends State<BankDetails> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              BankText(text: "Bank", sH: screenHeight),
-                              BankText(text: "A/C Name", sH: screenHeight),
-                              BankText(text: "A/C Number", sH: screenHeight),
-                              BankText(text: "IFSC Code", sH: screenHeight),
-                              BankText(text: "Branch", sH: screenHeight),
+                              BankText(
+                                  text: "Bank", screenHeight: screenHeight),
+                              BankText(
+                                  text: "A/C Name", screenHeight: screenHeight),
+                              BankText(
+                                  text: "A/C Number",
+                                  screenHeight: screenHeight),
+                              BankText(
+                                  text: "IFSC Code",
+                                  screenHeight: screenHeight),
+                              BankText(
+                                  text: "Branch", screenHeight: screenHeight),
                             ],
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              BankDetail(detail: "HDFC", sH: screenHeight),
                               BankDetail(
-                                  detail: "Chahat Ornaments", sH: screenHeight),
+                                  detail: "HDFC", screenHeight: screenHeight),
                               BankDetail(
-                                  detail: "50200053718511", sH: screenHeight),
+                                  detail: "Chahat Ornaments",
+                                  screenHeight: screenHeight),
                               BankDetail(
-                                  detail: "HDFC0009136", sH: screenHeight),
-                              BankDetail(detail: "Nichibagh", sH: screenHeight),
+                                  detail: "50200053718511",
+                                  screenHeight: screenHeight),
+                              BankDetail(
+                                  detail: "HDFC0009136",
+                                  screenHeight: screenHeight),
+                              BankDetail(
+                                  detail: "Nichibagh",
+                                  screenHeight: screenHeight),
                             ],
                           ),
                         ],
@@ -95,24 +108,37 @@ class _BankDetailsState extends State<BankDetails> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              BankText(text: "Bank", sH: screenHeight),
-                              BankText(text: "A/C Name", sH: screenHeight),
-                              BankText(text: "A/C Number", sH: screenHeight),
-                              BankText(text: "IFSC Code", sH: screenHeight),
-                              BankText(text: "Branch", sH: screenHeight),
+                              BankText(
+                                  text: "Bank", screenHeight: screenHeight),
+                              BankText(
+                                  text: "A/C Name", screenHeight: screenHeight),
+                              BankText(
+                                  text: "A/C Number",
+                                  screenHeight: screenHeight),
+                              BankText(
+                                  text: "IFSC Code",
+                                  screenHeight: screenHeight),
+                              BankText(
+                                  text: "Branch", screenHeight: screenHeight),
                             ],
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              BankDetail(detail: "PNB", sH: screenHeight),
                               BankDetail(
-                                  detail: "Chahat Ornaments", sH: screenHeight),
+                                  detail: "PNB", screenHeight: screenHeight),
                               BankDetail(
-                                  detail: "0464002100102020", sH: screenHeight),
+                                  detail: "Chahat Ornaments",
+                                  screenHeight: screenHeight),
                               BankDetail(
-                                  detail: "PUNB00046400", sH: screenHeight),
-                              BankDetail(detail: "Nichibagh", sH: screenHeight),
+                                  detail: "0464002100102020",
+                                  screenHeight: screenHeight),
+                              BankDetail(
+                                  detail: "PUNB00046400",
+                                  screenHeight: screenHeight),
+                              BankDetail(
+                                  detail: "Nichibagh",
+                                  screenHeight: screenHeight),
                             ],
                           ),
                         ],
@@ -130,10 +156,10 @@ class _BankDetailsState extends State<BankDetails> {
 }
 
 class BankDetail extends StatelessWidget {
-  const BankDetail({Key? key, required this.sH, required this.detail})
+  const BankDetail({Key? key, required this.screenHeight, required this.detail})
       : super(key: key);
 
-  final double sH;
+  final double screenHeight;
   final String detail;
 
   @override
@@ -141,18 +167,18 @@ class BankDetail extends StatelessWidget {
     return Text(
       "$detail",
       style: TextStyle(
-        color: Color(0xff2c5530),
-        fontSize: sH * 0.024,
+        color: AppColors.fontColor,
+        fontSize: screenHeight * 0.024,
       ),
     );
   }
 }
 
 class BankText extends StatelessWidget {
-  const BankText({Key? key, required this.sH, required this.text})
+  const BankText({Key? key, required this.screenHeight, required this.text})
       : super(key: key);
 
-  final double sH;
+  final double screenHeight;
   final String text;
 
   @override
@@ -160,8 +186,8 @@ class BankText extends StatelessWidget {
     return Text(
       "$text",
       style: TextStyle(
-        color: Color(0xff2c5530),
-        fontSize: sH * 0.024,
+        color: AppColors.fontColor,
+        fontSize: screenHeight * 0.024,
         fontWeight: FontWeight.bold,
       ),
     );

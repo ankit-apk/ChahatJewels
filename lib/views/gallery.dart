@@ -1,5 +1,6 @@
 import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:chahatjewel/controllers/data_controller.dart';
+import 'package:chahatjewel/utils/colors_file.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,7 +16,6 @@ class _GalleryState extends State<Gallery> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Obx(
@@ -27,7 +27,7 @@ class _GalleryState extends State<Gallery> {
                   child: Text(
                     "PRODUCT GALLERY",
                     style: TextStyle(
-                        color: Color(0xff2c5530),
+                        color: AppColors.fontColor,
                         fontSize: screenHeight * 0.022,
                         fontWeight: FontWeight.bold),
                   ),
@@ -36,7 +36,7 @@ class _GalleryState extends State<Gallery> {
                   height: screenHeight * 0.012,
                 ),
                 Container(
-                  color: Color(0xffD1AF68),
+                  color: AppColors.marginColor,
                   height: screenHeight * 0.008,
                   width: double.infinity,
                 ),
@@ -62,7 +62,7 @@ class _GalleryState extends State<Gallery> {
                           maxLines: 2,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color(0xff2c5530),
+                            color: AppColors.fontColor,
                             fontSize: screenHeight * 0.022,
                           ),
                         ),

@@ -1,4 +1,5 @@
 import 'package:chahatjewel/controllers/data_controller.dart';
+import 'package:chahatjewel/utils/colors_file.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,6 @@ class _ContactUsState extends State<ContactUs> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Obx(
         () => SafeArea(
           child: SingleChildScrollView(
@@ -29,7 +29,7 @@ class _ContactUsState extends State<ContactUs> {
                     child: Text(
                       "OUR ADDRESS",
                       style: TextStyle(
-                          color: Color(0xff2c5530),
+                          color: AppColors.fontColor,
                           fontSize: screenHeight * 0.022,
                           fontWeight: FontWeight.bold),
                     ),
@@ -38,7 +38,7 @@ class _ContactUsState extends State<ContactUs> {
                     height: screenHeight * 0.012,
                   ),
                   Container(
-                    color: Color(0xffD1AF68),
+                    color: AppColors.marginColor,
                     height: screenHeight * 0.008,
                     width: double.infinity,
                   ),
@@ -46,15 +46,14 @@ class _ContactUsState extends State<ContactUs> {
                     height: screenHeight * 0.02,
                   ),
                   Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(20)),
                     child: Column(
                       children: [
                         Icon(
                           FontAwesomeIcons.mapMarked,
                           size: screenHeight * 0.1,
-                          color: Color(0xfffbc02d),
+                          color: AppColors.goldDark,
                         ),
                         SizedBox(
                           height: screenHeight * 0.018,
@@ -63,7 +62,7 @@ class _ContactUsState extends State<ContactUs> {
                           "26, Thatheri Nazar, Ghasi Tola, Varanasi, Uttar Pradesh\n221001",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Color(0xff2c5530),
+                            color: AppColors.fontColor,
                             fontSize: screenHeight * 0.03,
                           ),
                         )
@@ -78,7 +77,7 @@ class _ContactUsState extends State<ContactUs> {
                     child: Text(
                       "CONTACT US",
                       style: TextStyle(
-                          color: Color(0xff2c5530),
+                          color: AppColors.fontColor,
                           fontSize: screenHeight * 0.022,
                           fontWeight: FontWeight.bold),
                     ),
@@ -86,7 +85,7 @@ class _ContactUsState extends State<ContactUs> {
                   Container(
                     height: screenHeight * 0.008,
                     width: MediaQuery.of(context).size.width / 2,
-                    color: Color(0xffD1AF68),
+                    color: AppColors.marginColor,
                   ),
                   ListView.builder(
                       shrinkWrap: true,
@@ -148,8 +147,8 @@ class _ContactUsState extends State<ContactUs> {
                               .toString(),
                         );
                       },
-                      child:
-                          Icon(FontAwesomeIcons.whatsapp, color: Colors.green),
+                      child: Icon(FontAwesomeIcons.whatsapp,
+                          color: AppColors.green),
                     ),
                     SizedBox(
                       width: screenHeight * 0.028,
