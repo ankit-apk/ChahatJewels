@@ -14,6 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   DataController dataController = Get.put(DataController());
   double screenHeight = 0;
+
   @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
@@ -100,41 +101,67 @@ class _HomeState extends State<Home> {
               color: AppColors.marginColor,
             ),
             Expanded(
-              child: Obx(
-                () => ListView(
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      height: screenHeight * 0.077,
-                      child: Card(
-                        child: buildListTile(
-                            'Gold Number/सोना नंबर', 'assets/goldneck.png', 0),
-                      ),
-                    ),
-                    Container(
-                      height: screenHeight * 0.077,
-                      child: Card(
-                        child: buildListTile(
-                            'Gold Bar/सोना ब्रेड', 'assets/goldbar.png', 1),
-                      ),
-                    ),
-                    Container(
-                      height: screenHeight * 0.077,
-                      child: Card(
-                        child: buildListTile('Silver Bar/चांदी ब्रेड',
-                            'assets/silverbar.png', 2),
-                      ),
-                    ),
-                    Container(
-                      height: screenHeight * 0.077,
-                      child: Card(
-                        child: buildListTile(
-                            'RTGS/UPI/सोना ब्रेड', 'assets/upi.png', 3),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              child: Obx(() => ListView.builder(
+                    itemCount: dataController.rateRef.isEmpty
+                        ? 0
+                        : dataController.rateRef.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: dataController.rateRef.isEmpty
+                              ? Text("Loading")
+                              : Image.asset(
+                                  dataController.rateRef[index]['location']
+                                      .toString(),
+                                  height: screenHeight * 0.04,
+                                ),
+                        ),
+                        title: Column(
+                          children: [
+                            AutoSizeText(
+                              dataController.rateRef.isEmpty
+                                  ? "Loading"
+                                  : dataController.rateRef[index]['item']
+                                      .toString(),
+                              maxLines: 1,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: screenHeight * 0.018),
+                            ),
+                            dataController.rateRef.isEmpty
+                                ? Text(
+                                    "Loading",
+                                    style: TextStyle(
+                                        color: AppColors.red,
+                                        fontSize: screenHeight * 0.0125),
+                                  )
+                                : Text(
+                                    "Last Updated ${dataController.rateRef[index]['update'].toString()}",
+                                    style: TextStyle(
+                                        color: AppColors.red,
+                                        fontSize: screenHeight * 0.0125),
+                                  )
+                          ],
+                        ),
+                        trailing: dataController.rateRef.isEmpty
+                            ? Text(
+                                "Loading..",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: screenHeight * 0.026,
+                                ),
+                              )
+                            : Text(
+                                '₹ ${dataController.rateRef[index]['price'].toString()}',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: screenHeight * 0.020,
+                                ),
+                              ),
+                      );
+                    },
+                  )),
             ),
             Container(
               width: double.infinity,
@@ -153,53 +180,6 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-    );
-  }
-
-  ListTile buildListTile(String item, String location, int index) {
-    return ListTile(
-      leading: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Image.asset(
-            '$location',
-            height: screenHeight * 0.04,
-          )),
-      title: Column(
-        children: [
-          AutoSizeText(
-            '$item',
-            maxLines: 1,
-            style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: screenHeight * 0.018),
-          ),
-          dataController.rateRef.isEmpty
-              ? Text(
-                  "Loading",
-                  style: TextStyle(
-                      color: AppColors.red, fontSize: screenHeight * 0.0125),
-                )
-              : Text(
-                  "Last Updated ${dataController.rateRef[0]['lastupdated'].toString()}",
-                  style: TextStyle(
-                      color: AppColors.red, fontSize: screenHeight * 0.0125),
-                )
-        ],
-      ),
-      trailing: dataController.rateRef.isEmpty
-          ? Text(
-              "Loading..",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: screenHeight * 0.026,
-              ),
-            )
-          : Text(
-              '₹ ${dataController.rateRef[0]['rates'][index].toString()}',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: screenHeight * 0.020,
-              ),
-            ),
     );
   }
 }
