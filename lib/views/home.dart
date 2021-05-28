@@ -3,6 +3,7 @@ import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:chahatjewel/controllers/data_controller.dart';
 import 'package:chahatjewel/utils/colors_file.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_card_swipper/flutter_card_swiper.dart';
 import 'package:get/get.dart';
 import 'package:marquee_text/marquee_text.dart';
 
@@ -52,22 +53,56 @@ class _HomeState extends State<Home> {
             ),
             AspectRatio(
               aspectRatio: 16 / 9,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Card(
-                  child: Obx(
-                    () => dataController.bannerRef.isEmpty
-                        ? Center(
-                            child: CircularProgressIndicator(),
-                          )
-                        : Image.network(
-                            '${dataController.bannerRef[0]['url'].toString()}',
-                            fit: BoxFit.cover,
-                          ),
-                  ),
-                ),
+              child: Obx(
+                () => dataController.bannerRef.isEmpty
+                    ? Container(
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      )
+                    : Swiper(
+                        autoplay: true,
+                        itemCount: dataController.bannerRef.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Card(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.network(
+                                dataController.bannerRef[index]['url']
+                                    .toString(),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
               ),
             ),
+
+            // child: CarouselSlider.builder(
+            //   itemCount: dataController.bannerRef.length,
+            //   itemBuilder: (BuildContext context, int itemIndex, _) =>
+            //       Container(
+            //     child: Image.network(
+            //         dataController.bannerRef[itemIndex].toString()),
+
+            // child: ClipRRect(
+            //   borderRadius: BorderRadius.circular(20),
+            //   child: Card(
+            //     child: Obx(
+            //         ()=>
+            //       // () => dataController.bannerRef.isEmpty
+            //       //     ? Center(
+            //       //         child: CircularProgressIndicator(),
+            //       //       )
+            //       //     : Image.network(
+            //       //         '${dataController.bannerRef[0]['url'].toString()}',
+            //       //         fit: BoxFit.cover,
+            //       //       ),
+            //     ),
+            //   ),
+            // ),
+
             Container(
               width: double.infinity,
               child: Obx(

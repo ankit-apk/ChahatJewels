@@ -140,28 +140,36 @@ class _ContactUsState extends State<ContactUs> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    TextButton(
-                      onPressed: () {
-                        dataController.launchWhatsapp(
-                          dataController.contactsRef[index]['number']
-                              .toString(),
-                        );
-                      },
-                      child: Icon(FontAwesomeIcons.whatsapp,
-                          color: AppColors.green),
-                    ),
+                    dataController.contactsRef[index]
+                                ['isAvailableForWhatsapp'] ==
+                            true
+                        ? TextButton(
+                            onPressed: () {
+                              dataController.launchWhatsapp(
+                                dataController.contactsRef[index]['number']
+                                    .toString(),
+                              );
+                            },
+                            child: Icon(FontAwesomeIcons.whatsapp,
+                                color: AppColors.green),
+                          )
+                        : Container(),
                     SizedBox(
                       width: screenHeight * 0.028,
                     ),
-                    TextButton(
-                      onPressed: () {
-                        dataController.launchPhone(
-                          dataController.contactsRef[index]['number']
-                              .toString(),
-                        );
-                      },
-                      child: Icon(FontAwesomeIcons.phone, color: Colors.blue),
-                    )
+                    dataController.contactsRef[index]['isAvailableForPhone'] ==
+                            true
+                        ? TextButton(
+                            onPressed: () {
+                              dataController.launchPhone(
+                                dataController.contactsRef[index]['number']
+                                    .toString(),
+                              );
+                            },
+                            child: Icon(FontAwesomeIcons.phone,
+                                color: Colors.blue),
+                          )
+                        : Container(),
                   ],
                 ),
               ),
