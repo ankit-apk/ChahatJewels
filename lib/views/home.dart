@@ -78,31 +78,6 @@ class _HomeState extends State<Home> {
                       ),
               ),
             ),
-
-            // child: CarouselSlider.builder(
-            //   itemCount: dataController.bannerRef.length,
-            //   itemBuilder: (BuildContext context, int itemIndex, _) =>
-            //       Container(
-            //     child: Image.network(
-            //         dataController.bannerRef[itemIndex].toString()),
-
-            // child: ClipRRect(
-            //   borderRadius: BorderRadius.circular(20),
-            //   child: Card(
-            //     child: Obx(
-            //         ()=>
-            //       // () => dataController.bannerRef.isEmpty
-            //       //     ? Center(
-            //       //         child: CircularProgressIndicator(),
-            //       //       )
-            //       //     : Image.network(
-            //       //         '${dataController.bannerRef[0]['url'].toString()}',
-            //       //         fit: BoxFit.cover,
-            //       //       ),
-            //     ),
-            //   ),
-            // ),
-
             Container(
               width: double.infinity,
               child: Obx(
